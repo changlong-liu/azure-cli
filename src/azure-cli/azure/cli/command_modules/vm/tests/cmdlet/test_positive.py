@@ -18,6 +18,26 @@ class PositiveTest(ScenarioTest):
     def __init__(self, *args, **kwargs):
         super(PositiveTest, self).__init__(*args, **kwargs)
 
+    # EXAMPLE: /SshPublicKeys/get/Get an ssh public key.
+    def test_ssh_public_key_show(self):
+        self.cmd('az vm ssh-public-key show '
+                 '--resource-group "myResourceGroup" '
+                 '--name "mySshPublicKeyName"')
+
+    # EXAMPLE: /SshPublicKeys/put/Create a new SSH public key resource.
+    def test_ssh_public_key_create(self):
+        self.cmd('az vm ssh-public-key create '
+                 '--location "westus" '
+                 '--public-key "{{ssh-rsa public key}}" '
+                 '--resource-group "myResourceGroup" '
+                 '--name "mySshPublicKeyName"')
+
+    # EXAMPLE: /SshPublicKeys/post/Generate an SSH key pair.
+    def test_ssh_public_key_generate_key_pair(self):
+        self.cmd('az vm ssh-public-key generate-key-pair '
+                 '--resource-group "myResourceGroup" '
+                 '--name "mySshPublicKeyName"')
+
     # EXAMPLE: /VirtualMachines/post/Reimage a Virtual Machine.
     def test_virtual_machine_reimage(self):
         self.cmd('az vm virtual-machine reimage '
@@ -59,13 +79,6 @@ class PositiveTest(ScenarioTest):
                  '--instance-id "0" '
                  '--resource-group "ResourceGroup" '
                  '--sas-uri-expiration-time-in-minutes 60 '
-                 '--vm-scale-set-name "myvmScaleSet"')
-
-    # EXAMPLE: /VirtualMachineScaleSetVMRunCommands/get/List run commands in Vmss instance.
-    def test_virtual_machine_scale_set_vm_run_command_list(self):
-        self.cmd('az vm virtual-machine-scale-set-vm-run-command list '
-                 '--instance-id "0" '
-                 '--resource-group "myResourceGroup" '
                  '--vm-scale-set-name "myvmScaleSet"')
 
     # EXAMPLE: /DiskAccesses/delete/Delete a private endpoint connection under a disk access resource.

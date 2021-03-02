@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      CommandName:
+      - vm virtual-machine-scale-set-vm-extension show
+      Connection:
+      - keep-alive
+      ParameterSetName:
+      - --instance-id --resource-group --vm-extension-name --vm-scale-set-name
+      User-Agent:
+      - AZURECLI/2.19.1 azsdk-python-azure-mgmt-compute/18.0.0 Python/3.8.1 (Windows-10-10.0.19041-SP0)
+    method: GET
+    uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myvmScaleSet/virtualMachines/0/extensions/myVMExtension?api-version=2020-06-01
+  response:
+    body:
+      string: '{"id":"aaaaaaaaaaaaaaaaa","name":"myVMExtension","type":"aaaaaaaaaaaaaaaa","properties":{"forceUpdateTag":"aaaaaaaaaaaaaaaaaaaaa","publisher":"aaaaaaaaaa","type":"aaaaaaaaa","typeHandlerVersion":"aaaaaaaaaaaaaaaaaaaa","autoUpgradeMinorVersion":true,"enableAutomaticUpgrade":true,"settings":{},"protectedSettings":{},"provisioningState":"Succeeded","instanceView":{"name":"myVMExtension","type":"aaa","typeHandlerVersion":"aaaa","substatuses":[{"code":"aaaa","level":"Info","displayStatus":"aaaaaaaaa","message":"aaaa","time":"2021-03-02T03:18:29.165Z"}],"statuses":[{"code":"aaaa","level":"Info","displayStatus":"aaaaaaaaa","message":"aaaa","time":"2021-03-02T03:18:29.165Z"}]}}}'
+    headers:
+      connection:
+      - keep-alive
+      content-length:
+      - '679'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 02 Mar 2021 03:26:41 GMT
+      etag:
+      - W/"2a7-2GKpt6X6y8nPnfzvU//f7QdHWt0"
+      x-powered-by:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

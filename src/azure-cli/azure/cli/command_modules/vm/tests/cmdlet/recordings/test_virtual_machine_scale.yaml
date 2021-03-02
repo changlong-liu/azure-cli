@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      CommandName:
+      - vm virtual-machine-scale-set-v-ms retrieve-boot-diagnostic-data
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      ParameterSetName:
+      - --instance-id --resource-group --sas-uri-expiration-time-in-minutes --vm-scale-set-name
+      User-Agent:
+      - AZURECLI/2.19.1 azsdk-python-azure-mgmt-compute/18.0.0 Python/3.8.1 (Windows-10-10.0.19041-SP0)
+    method: POST
+    uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myvmScaleSet/virtualmachines/0/retrieveBootDiagnosticsData?sasUriExpirationTimeInMinutes=60&api-version=2020-06-01
+  response:
+    body:
+      string: '{"consoleScreenshotBlobUri":"aaaaaaaaaaaaaaaaaaaaaa","serialConsoleLogBlobUri":"aaa"}'
+    headers:
+      connection:
+      - keep-alive
+      content-length:
+      - '85'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 02 Mar 2021 03:26:35 GMT
+      etag:
+      - W/"55-bXtzUqTYFp54bW0hwiSl24q9dRE"
+      x-powered-by:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

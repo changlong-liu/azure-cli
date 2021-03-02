@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      CommandName:
+      - vm gallery-application-version list
+      Connection:
+      - keep-alive
+      ParameterSetName:
+      - --gallery-application-name --gallery-name --resource-group
+      User-Agent:
+      - AZURECLI/2.19.1 azsdk-python-azure-mgmt-compute/18.0.0 Python/3.8.1 (Windows-10-10.0.19041-SP0)
+    method: GET
+    uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/galleries/myGalleryName/applications/myGalleryApplicationName/versions?api-version=2020-09-30
+  response:
+    body:
+      string: '{"value":[{"id":"aaaa","name":"versions","type":"aaaaaaaaaaaaaaaaaaaaaaaaaa","location":"aaaaaaaaaaaaaaaaaaaaaa","tags":{"key1660":"aaaaaaaaaaaaaaaaaaaaaa"},"properties":{"publishingProfile":{"targetRegions":[{"name":"versions","regionalReplicaCount":24,"storageAccountType":"Standard_LRS","encryption":{"osDiskImage":{"diskEncryptionSetId":"aaaaaaaaa"},"dataDiskImages":[{"diskEncryptionSetId":"aaaaa","lun":22}]}}],"replicaCount":29,"excludeFromLatest":true,"publishedDate":"2021-03-02T03:18:20.678Z","endOfLifeDate":"2021-03-02T03:18:20.678Z","storageAccountType":"Standard_LRS","source":{"mediaLink":"aaaaaaaaaa","defaultConfigurationLink":"aaaaaa"},"manageActions":{"install":"aaaaaaaaaaaaaaaaaaaaaaaaaaaa","remove":"aaaaaaaaaaaaaaaaaaaaaa","update":"aaaaaaaaaaaaaaaaaaaaaaaaaaaa"},"enableHealthCheck":true},"provisioningState":"Succeeded","replicationStatus":{"aggregatedState":"Unknown","summary":[{"region":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaa","state":"Unknown","details":"aa","progress":8}]}}}]}'
+    headers:
+      connection:
+      - keep-alive
+      content-length:
+      - '999'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 02 Mar 2021 03:26:23 GMT
+      etag:
+      - W/"3e7-HgoVyywa6JQXacZUJoJwf/N++YU"
+      x-powered-by:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

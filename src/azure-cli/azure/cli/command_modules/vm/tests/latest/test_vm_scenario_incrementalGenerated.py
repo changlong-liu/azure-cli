@@ -18,11 +18,13 @@ from .example_steps import step_gallery_application_show
 from .example_steps import step_gallery_application_list
 from .example_steps import step_gallery_application_version_list
 from .example_steps import step_gallery_application_delete
+from .example_steps import step_ssh_public_key_create
+from .example_steps import step_ssh_public_key_show
+from .example_steps import step_ssh_public_key_generate_key_pair
 from .example_steps import step_virtual_machine_reimage
 from .example_steps import step_virtual_machine_scale_set_vm_extension_create
 from .example_steps import step_virtual_machine_scale_set_vm_extension_show
 from .example_steps import step_virtual_machine_scale_set_vm_extension_list
-from .example_steps import step_virtual_machine_scale_set_vm_run_command_list
 from .example_steps import step_virtual_machine_scale
 from .. import (
     try_manual,
@@ -75,11 +77,21 @@ def call_scenario(test):
     ])
     step_gallery_application_version_list(test, checks=[])
     step_gallery_application_delete(test, checks=[])
+    step_ssh_public_key_create(test, checks=[
+        test.check("location", "westus", case_sensitive=False),
+        test.check("publicKey", "{{ssh-rsa public key}}", case_sensitive=False),
+        test.check("name", "{mySshPublicKey}", case_sensitive=False),
+    ])
+    step_ssh_public_key_show(test, checks=[
+        test.check("location", "westus", case_sensitive=False),
+        test.check("publicKey", "{{ssh-rsa public key}}", case_sensitive=False),
+        test.check("name", "{mySshPublicKey}", case_sensitive=False),
+    ])
+    step_ssh_public_key_generate_key_pair(test, checks=[])
     step_virtual_machine_reimage(test, checks=[])
     step_virtual_machine_scale_set_vm_extension_create(test, checks=[])
     step_virtual_machine_scale_set_vm_extension_show(test, checks=[])
     step_virtual_machine_scale_set_vm_extension_list(test, checks=[])
-    step_virtual_machine_scale_set_vm_run_command_list(test, checks=[])
     step_virtual_machine_scale(test, checks=[])
     cleanup_scenario(test)
 
@@ -90,6 +102,7 @@ class VmScenarioTest(ScenarioTest):
     def __init__(self, *args, **kwargs):
         super(VmScenarioTest, self).__init__(*args, **kwargs)
         self.kwargs.update({
+            'mySshPublicKey': 'mySshPublicKeyName',
             'myDiskAccess': 'myDiskAccess',
             'myGalleryApplication': 'myGalleryApplicationName',
         })

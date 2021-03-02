@@ -14,7 +14,6 @@
 |az vm virtual-machine-scale-set|VirtualMachineScaleSets|[commands](#CommandsInVirtualMachineScaleSets)|
 |az vm virtual-machine-scale-set-vm-extension|VirtualMachineScaleSetVMExtensions|[commands](#CommandsInVirtualMachineScaleSetVMExtensions)|
 |az vm virtual-machine-scale-set-v-ms|VirtualMachineScaleSetVMs|[commands](#CommandsInVirtualMachineScaleSetVMs)|
-|az vm virtual-machine-scale-set-vm-run-command|VirtualMachineScaleSetVMRunCommands|[commands](#CommandsInVirtualMachineScaleSetVMRunCommands)|
 |az vm disk-access|DiskAccesses|[commands](#CommandsInDiskAccesses)|
 |az vm gallery-application|GalleryApplications|[commands](#CommandsInGalleryApplications)|
 |az vm gallery-application-version|GalleryApplicationVersions|[commands](#CommandsInGalleryApplicationVersions)|
@@ -42,7 +41,11 @@
 ### <a name="CommandsInSshPublicKeys">Commands in `az vm ssh-public-key` group</a>
 |CLI Command|Operation Swagger name|Parameters|Examples|
 |---------|------------|--------|-----------|
+|[az vm ssh-public-key list](#SshPublicKeysListByResourceGroup)|ListByResourceGroup|[Parameters](#ParametersSshPublicKeysListByResourceGroup)|Not Found|
+|[az vm ssh-public-key show](#SshPublicKeysGet)|Get|[Parameters](#ParametersSshPublicKeysGet)|[Example](#ExamplesSshPublicKeysGet)|
+|[az vm ssh-public-key create](#SshPublicKeysCreate)|Create|[Parameters](#ParametersSshPublicKeysCreate)|[Example](#ExamplesSshPublicKeysCreate)|
 |[az vm ssh-public-key delete](#SshPublicKeysDelete)|Delete|[Parameters](#ParametersSshPublicKeysDelete)|Not Found|
+|[az vm ssh-public-key generate-key-pair](#SshPublicKeysGenerateKeyPair)|GenerateKeyPair|[Parameters](#ParametersSshPublicKeysGenerateKeyPair)|[Example](#ExamplesSshPublicKeysGenerateKeyPair)|
 
 ### <a name="CommandsInVirtualMachines">Commands in `az vm virtual-machine` group</a>
 |CLI Command|Operation Swagger name|Parameters|Examples|
@@ -69,11 +72,6 @@
 |[az vm virtual-machine-scale-set-vm-extension list](#VirtualMachineScaleSetVMExtensionsList)|List|[Parameters](#ParametersVirtualMachineScaleSetVMExtensionsList)|[Example](#ExamplesVirtualMachineScaleSetVMExtensionsList)|
 |[az vm virtual-machine-scale-set-vm-extension show](#VirtualMachineScaleSetVMExtensionsGet)|Get|[Parameters](#ParametersVirtualMachineScaleSetVMExtensionsGet)|[Example](#ExamplesVirtualMachineScaleSetVMExtensionsGet)|
 |[az vm virtual-machine-scale-set-vm-extension create](#VirtualMachineScaleSetVMExtensionsCreateOrUpdate#Create)|CreateOrUpdate#Create|[Parameters](#ParametersVirtualMachineScaleSetVMExtensionsCreateOrUpdate#Create)|[Example](#ExamplesVirtualMachineScaleSetVMExtensionsCreateOrUpdate#Create)|
-
-### <a name="CommandsInVirtualMachineScaleSetVMRunCommands">Commands in `az vm virtual-machine-scale-set-vm-run-command` group</a>
-|CLI Command|Operation Swagger name|Parameters|Examples|
-|---------|------------|--------|-----------|
-|[az vm virtual-machine-scale-set-vm-run-command list](#VirtualMachineScaleSetVMRunCommandsList)|List|[Parameters](#ParametersVirtualMachineScaleSetVMRunCommandsList)|[Example](#ExamplesVirtualMachineScaleSetVMRunCommandsList)|
 
 
 ## COMMAND DETAILS
@@ -186,9 +184,56 @@ az vm gallery-application-version list --gallery-application-name "myGalleryAppl
 |**--gallery-application-name**|string|The name of the Shared Application Gallery Application Definition from which the Application Versions are to be listed.|gallery_application_name|galleryApplicationName|
 
 ### group `az vm ssh-public-key`
+#### <a name="SshPublicKeysListByResourceGroup">Command `az vm ssh-public-key list`</a>
+
+##### <a name="ParametersSshPublicKeysListByResourceGroup">Parameters</a> 
+|Option|Type|Description|Path (SDK)|Swagger name|
+|------|----|-----------|----------|------------|
+|**--resource-group-name**|string|The name of the resource group.|resource_group_name|resourceGroupName|
+
+#### <a name="SshPublicKeysGet">Command `az vm ssh-public-key show`</a>
+
+##### <a name="ExamplesSshPublicKeysGet">Example</a>
+```
+az vm ssh-public-key show --resource-group "myResourceGroup" --name "mySshPublicKeyName"
+```
+##### <a name="ParametersSshPublicKeysGet">Parameters</a> 
+|Option|Type|Description|Path (SDK)|Swagger name|
+|------|----|-----------|----------|------------|
+|**--resource-group-name**|string|The name of the resource group.|resource_group_name|resourceGroupName|
+|**--ssh-public-key-name**|string|The name of the SSH public key.|ssh_public_key_name|sshPublicKeyName|
+
+#### <a name="SshPublicKeysCreate">Command `az vm ssh-public-key create`</a>
+
+##### <a name="ExamplesSshPublicKeysCreate">Example</a>
+```
+az vm ssh-public-key create --location "westus" --public-key "{ssh-rsa public key}" --resource-group "myResourceGroup" \
+--name "mySshPublicKeyName"
+```
+##### <a name="ParametersSshPublicKeysCreate">Parameters</a> 
+|Option|Type|Description|Path (SDK)|Swagger name|
+|------|----|-----------|----------|------------|
+|**--resource-group-name**|string|The name of the resource group.|resource_group_name|resourceGroupName|
+|**--ssh-public-key-name**|string|The name of the SSH public key.|ssh_public_key_name|sshPublicKeyName|
+|**--location**|string|Resource location|location|location|
+|**--tags**|dictionary|Resource tags|tags|tags|
+|**--public-key**|string|SSH public key used to authenticate to a virtual machine through ssh. If this property is not initially provided when the resource is created, the publicKey property will be populated when generateKeyPair is called. If the public key is provided upon resource creation, the provided public key needs to be at least 2048-bit and in ssh-rsa format.|public_key|publicKey|
+
 #### <a name="SshPublicKeysDelete">Command `az vm ssh-public-key delete`</a>
 
 ##### <a name="ParametersSshPublicKeysDelete">Parameters</a> 
+|Option|Type|Description|Path (SDK)|Swagger name|
+|------|----|-----------|----------|------------|
+|**--resource-group-name**|string|The name of the resource group.|resource_group_name|resourceGroupName|
+|**--ssh-public-key-name**|string|The name of the SSH public key.|ssh_public_key_name|sshPublicKeyName|
+
+#### <a name="SshPublicKeysGenerateKeyPair">Command `az vm ssh-public-key generate-key-pair`</a>
+
+##### <a name="ExamplesSshPublicKeysGenerateKeyPair">Example</a>
+```
+az vm ssh-public-key generate-key-pair --resource-group "myResourceGroup" --name "mySshPublicKeyName"
+```
+##### <a name="ParametersSshPublicKeysGenerateKeyPair">Parameters</a> 
 |Option|Type|Description|Path (SDK)|Swagger name|
 |------|----|-----------|----------|------------|
 |**--resource-group-name**|string|The name of the resource group.|resource_group_name|resourceGroupName|
@@ -331,19 +376,3 @@ az vm virtual-machine-scale-set-vm-extension create --type-properties-type "extT
 |**--virtual-machine-extension-instance-view-type-handler-version-type-handler-version**|string|Specifies the version of the script handler.|virtual_machine_extension_instance_view_type_handler_version_type_handler_version|typeHandlerVersion|
 |**--substatuses**|array|The resource status information.|substatuses|substatuses|
 |**--statuses**|array|The resource status information.|statuses|statuses|
-
-### group `az vm virtual-machine-scale-set-vm-run-command`
-#### <a name="VirtualMachineScaleSetVMRunCommandsList">Command `az vm virtual-machine-scale-set-vm-run-command list`</a>
-
-##### <a name="ExamplesVirtualMachineScaleSetVMRunCommandsList">Example</a>
-```
-az vm virtual-machine-scale-set-vm-run-command list --instance-id "0" --resource-group "myResourceGroup" \
---vm-scale-set-name "myvmScaleSet"
-```
-##### <a name="ParametersVirtualMachineScaleSetVMRunCommandsList">Parameters</a> 
-|Option|Type|Description|Path (SDK)|Swagger name|
-|------|----|-----------|----------|------------|
-|**--resource-group-name**|string|The name of the resource group.|resource_group_name|resourceGroupName|
-|**--vm-scale-set-name**|string|The name of the VM scale set.|vm_scale_set_name|vmScaleSetName|
-|**--instance-id**|string|The instance ID of the virtual machine.|instance_id|instanceId|
-|**--expand**|string|The expand expression to apply on the operation.|expand|$expand|

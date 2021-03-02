@@ -100,6 +100,41 @@ def step_gallery_application_delete(test, checks=None):
              checks=checks)
 
 
+# EXAMPLE: /SshPublicKeys/put/Create a new SSH public key resource.
+@try_manual
+def step_ssh_public_key_create(test, checks=None):
+    if checks is None:
+        checks = []
+    test.cmd('az vm ssh-public-key create '
+             '--location "westus" '
+             '--public-key "{{ssh-rsa public key}}" '
+             '--resource-group "{rg}" '
+             '--name "{mySshPublicKey}"',
+             checks=checks)
+
+
+# EXAMPLE: /SshPublicKeys/get/Get an ssh public key.
+@try_manual
+def step_ssh_public_key_show(test, checks=None):
+    if checks is None:
+        checks = []
+    test.cmd('az vm ssh-public-key show '
+             '--resource-group "{rg}" '
+             '--name "{mySshPublicKey}"',
+             checks=checks)
+
+
+# EXAMPLE: /SshPublicKeys/post/Generate an SSH key pair.
+@try_manual
+def step_ssh_public_key_generate_key_pair(test, checks=None):
+    if checks is None:
+        checks = []
+    test.cmd('az vm ssh-public-key generate-key-pair '
+             '--resource-group "{rg}" '
+             '--name "{mySshPublicKey}"',
+             checks=checks)
+
+
 # EXAMPLE: /VirtualMachines/post/Reimage a Virtual Machine.
 @try_manual
 def step_virtual_machine_reimage(test, checks=None):
@@ -149,18 +184,6 @@ def step_virtual_machine_scale_set_vm_extension_list(test, checks=None):
     if checks is None:
         checks = []
     test.cmd('az vm virtual-machine-scale-set-vm-extension list '
-             '--instance-id "0" '
-             '--resource-group "{rg}" '
-             '--vm-scale-set-name "myvmScaleSet"',
-             checks=checks)
-
-
-# EXAMPLE: /VirtualMachineScaleSetVMRunCommands/get/List run commands in Vmss instance.
-@try_manual
-def step_virtual_machine_scale_set_vm_run_command_list(test, checks=None):
-    if checks is None:
-        checks = []
-    test.cmd('az vm virtual-machine-scale-set-vm-run-command list '
              '--instance-id "0" '
              '--resource-group "{rg}" '
              '--vm-scale-set-name "myvmScaleSet"',

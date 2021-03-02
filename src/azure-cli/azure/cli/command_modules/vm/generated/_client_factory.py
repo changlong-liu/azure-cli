@@ -36,10 +36,6 @@ def cf_virtual_machine_scale_set_vms(cli_ctx, *_):
     return cf_vm_cl(cli_ctx).virtual_machine_scale_set_vms
 
 
-def cf_virtual_machine_scale_set_vm_run_command(cli_ctx, *_):
-    return cf_vm_cl(cli_ctx).virtual_machine_scale_set_vm_run_commands
-
-
 def cf_disk_access(cli_ctx, *_):
     return cf_vm_cl(cli_ctx).disk_accesses
 

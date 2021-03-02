@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json, text/json
+      Accept-Encoding:
+      - gzip, deflate
+      CommandName:
+      - vm virtual-machine-scale-set-vm-run-command list
+      Connection:
+      - keep-alive
+      ParameterSetName:
+      - --instance-id --resource-group --vm-scale-set-name
+      User-Agent:
+      - AZURECLI/2.19.1 azsdk-python-azure-mgmt-compute/18.0.0 Python/3.8.1 (Windows-10-10.0.19041-SP0)
+    method: GET
+    uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myvmScaleSet/virtualMachines/0/runCommands?api-version=2020-06-01
+  response:
+    body:
+      string: '{"value":[{"id":"aaaaaa","name":"runCommands","type":"aaaaaaaaaaaaaa","location":"aaaaaaaaaaa","tags":{"key602":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},"properties":{"source":{"script":"aaaaaaaaaaaaaaaaaaaaaaaa","scriptUri":"aaaaaaaaaaaaa","commandId":"aaaaaaaaaaaaaaaaaa"},"parameters":[{"name":"runCommands","value":"aaaaaaaaaaaaaaaaaa"}],"protectedParameters":[{"name":"runCommands","value":"aaaaaaaaaaaaaaaaaa"}],"asyncExecution":true,"runAsUser":"aaaaaaaaaaaa","runAsPassword":"aaaaaaaaaaaaaaaaa","timeoutInSeconds":3,"outputBlobUri":"aaaaaaaaaaaaaaaaaaa","errorBlobUri":"aaaaaaaaaaaaaaa","provisioningState":"Succeeded","instanceView":{"executionState":"Unknown","executionMessage":"aaa","exitCode":19,"output":"aaaaaaaaaaaaaa","error":"aaaaa","startTime":"2021-02-26T02:25:30.739Z","endTime":"2021-02-26T02:25:30.739Z","statuses":[{"code":"aaaaaaaaaaa","level":"Info","displayStatus":"aaaaaaaaaaaaaaaaaaaaaaaaaaaa","message":"aaaaaaaaaaaaaaaaaaaaa","time":"2021-02-26T01:31:36.857Z"}]}}}]}'
+    headers:
+      connection:
+      - keep-alive
+      content-length:
+      - '990'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Fri, 26 Feb 2021 02:25:30 GMT
+      etag:
+      - W/"3de-CBW+5tsdH4oUumzi0xc7EueEGLc"
+      x-powered-by:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      CommandName:
+      - vm ssh-public-key generate-key-pair
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      ParameterSetName:
+      - --resource-group --name
+      User-Agent:
+      - AZURECLI/2.19.1 azsdk-python-azure-mgmt-compute/18.0.0 Python/3.8.1 (Windows-10-10.0.19041-SP0)
+    method: POST
+    uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/sshPublicKeys/mySshPublicKeyName/generateKeyPair?api-version=2020-06-01
+  response:
+    body:
+      string: '{"privateKey":"aaaaaa","publicKey":"aaa","id":"aaaaaaaaa"}'
+    headers:
+      connection:
+      - keep-alive
+      content-length:
+      - '58'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 02 Mar 2021 03:26:29 GMT
+      etag:
+      - W/"3a-eXDV4GwsuU0WogBylINQXLK38lI"
+      x-powered-by:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

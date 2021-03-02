@@ -1,0 +1,78 @@
+interactions:
+- request:
+    body: '{"location": "westus", "properties": {"publicKey": "{ssh-rsa public key}"}}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      CommandName:
+      - vm ssh-public-key create
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '75'
+      Content-Type:
+      - application/json
+      ParameterSetName:
+      - --location --public-key --resource-group --name
+      User-Agent:
+      - AZURECLI/2.19.1 azsdk-python-azure-mgmt-compute/18.0.0 Python/3.8.1 (Windows-10-10.0.19041-SP0)
+    method: PUT
+    uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/sshPublicKeys/mySshPublicKeyName?api-version=2020-06-01
+  response:
+    body:
+      string: '{"id":"aaaaaaaaaaaaaaaaaaa","name":"mySshPublicKeyName","type":"aaaaaaaaaaaaaaaaaaaaaaa","location":"aaaaaaaaaaaa","tags":{"key9418":"aa"},"properties":{"publicKey":"aaaaaaaaaaaaaaaaaaaaaa"}}'
+    headers:
+      connection:
+      - keep-alive
+      content-length:
+      - '191'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 02 Mar 2021 03:26:26 GMT
+      etag:
+      - W/"bf-G035yXned0Pnl0YwzZK5eRVNySw"
+      x-powered-by:
+      - Express
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      CommandName:
+      - vm ssh-public-key create
+      Connection:
+      - keep-alive
+      ParameterSetName:
+      - --location --public-key --resource-group --name
+      User-Agent:
+      - AZURECLI/2.19.1 azsdk-python-azure-mgmt-compute/18.0.0 Python/3.8.1 (Windows-10-10.0.19041-SP0)
+    method: GET
+    uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/sshPublicKeys/mySshPublicKeyName?api-version=2020-06-01
+  response:
+    body:
+      string: '{"id":"aaaaaaaaaaaaaaaaaaa","name":"mySshPublicKeyName","type":"aaaaaaaaaaaaaaaaaaaaaaa","location":"aaaaaaaaaaaa","tags":{"key9418":"aa"},"properties":{"publicKey":"aaaaaaaaaaaaaaaaaaaaaa"}}'
+    headers:
+      connection:
+      - keep-alive
+      content-length:
+      - '191'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 02 Mar 2021 03:26:27 GMT
+      etag:
+      - W/"bf-G035yXned0Pnl0YwzZK5eRVNySw"
+      x-powered-by:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -13,11 +13,45 @@
 from azure.cli.core.util import sdk_no_wait
 
 
+def vm_ssh_public_key_list(client,
+                           resource_group_name):
+    return client.list_by_resource_group(resource_group_name=resource_group_name)
+
+
+def vm_ssh_public_key_show(client,
+                           resource_group_name,
+                           ssh_public_key_name):
+    return client.get(resource_group_name=resource_group_name,
+                      ssh_public_key_name=ssh_public_key_name)
+
+
+def vm_ssh_public_key_create(client,
+                             resource_group_name,
+                             ssh_public_key_name,
+                             location,
+                             tags=None,
+                             public_key=None):
+    parameters = {}
+    parameters['location'] = location
+    parameters['tags'] = tags
+    parameters['public_key'] = public_key
+    return client.create(resource_group_name=resource_group_name,
+                         ssh_public_key_name=ssh_public_key_name,
+                         parameters=parameters)
+
+
 def vm_ssh_public_key_delete(client,
                              resource_group_name,
                              ssh_public_key_name):
     return client.delete(resource_group_name=resource_group_name,
                          ssh_public_key_name=ssh_public_key_name)
+
+
+def vm_ssh_public_key_generate_key_pair(client,
+                                        resource_group_name,
+                                        ssh_public_key_name):
+    return client.generate_key_pair(resource_group_name=resource_group_name,
+                                    ssh_public_key_name=ssh_public_key_name)
 
 
 def vm_virtual_machine_reimage(client,
@@ -165,17 +199,6 @@ def vm_virtual_machine_scale_set_v_ms_retrieve_boot_diagnostic_data(client,
                                                  vm_scale_set_name=vm_scale_set_name,
                                                  instance_id=instance_id,
                                                  sas_uri_expiration_time_in_minutes=sas_uri_expiration_time_in_minutes)
-
-
-def vm_virtual_machine_scale_set_vm_run_command_list(client,
-                                                     resource_group_name,
-                                                     vm_scale_set_name,
-                                                     instance_id,
-                                                     expand=None):
-    return client.list(resource_group_name=resource_group_name,
-                       vm_scale_set_name=vm_scale_set_name,
-                       instance_id=instance_id,
-                       expand=expand)
 
 
 def vm_disk_access_delete(client,

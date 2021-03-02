@@ -23,7 +23,11 @@ def load_command_table(self, _):
         client_factory=cf_ssh_public_key,
     )
     with self.command_group('vm ssh-public-key', vm_ssh_public_key, client_factory=cf_ssh_public_key) as g:
+        g.custom_command('list', 'vm_ssh_public_key_list')
+        g.custom_show_command('show', 'vm_ssh_public_key_show')
+        g.custom_command('create', 'vm_ssh_public_key_create')
         g.custom_command('delete', 'vm_ssh_public_key_delete', confirmation=True)
+        g.custom_command('generate-key-pair', 'vm_ssh_public_key_generate_key_pair')
 
     from ..generated._client_factory import cf_virtual_machine
 
@@ -84,19 +88,6 @@ def load_command_table(self, _):
         g.custom_command(
             'retrieve-boot-diagnostic-data', 'vm_virtual_machine_scale_set_v_ms_retrieve_boot_diagnostic_data'
         )
-
-    from ..generated._client_factory import cf_virtual_machine_scale_set_vm_run_command
-
-    vm_virtual_machine_scale_set_vm_run_command = CliCommandType(
-        operations_tmpl='azure.mgmt.compute.operations._virtual_machine_scale_set_vm_run_commands_operations#VirtualMachineScaleSetVmRunCommandsOperations.{}',
-        client_factory=cf_virtual_machine_scale_set_vm_run_command,
-    )
-    with self.command_group(
-        'vm virtual-machine-scale-set-vm-run-command',
-        vm_virtual_machine_scale_set_vm_run_command,
-        client_factory=cf_virtual_machine_scale_set_vm_run_command,
-    ) as g:
-        g.custom_command('list', 'vm_virtual_machine_scale_set_vm_run_command_list')
 
     from ..generated._client_factory import cf_disk_access
 

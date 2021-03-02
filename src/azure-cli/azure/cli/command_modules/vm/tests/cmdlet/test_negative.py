@@ -19,6 +19,44 @@ class NegativeTest(ScenarioTest):
     def __init__(self, *args, **kwargs):
         super(NegativeTest, self).__init__(*args, **kwargs)
 
+    # EXAMPLE: /SshPublicKeys/get/Get an ssh public key.
+    def test_ssh_public_key_show(self):
+        try:
+            self.cmd('az vm ssh-public-key show '
+                     '--resource-group "myResourceGroup" '
+                     '--name "mySshPublicKeyName"')
+            raise Exception("Error Expected!")
+        except ResourceNotFoundError as e:
+            assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
+
+    # EXAMPLE: /SshPublicKeys/put/Create a new SSH public key resource.
+    def test_ssh_public_key_create(self):
+        try:
+            self.cmd('az vm ssh-public-key create '
+                     '--location "westus" '
+                     '--public-key "{{ssh-rsa public key}}" '
+                     '--resource-group "myResourceGroup" '
+                     '--name "mySshPublicKeyName"')
+            raise Exception("Error Expected!")
+        except ResourceNotFoundError as e:
+            assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
+
+    # EXAMPLE: /SshPublicKeys/post/Generate an SSH key pair.
+    def test_ssh_public_key_generate_key_pair(self):
+        try:
+            self.cmd('az vm ssh-public-key generate-key-pair '
+                     '--resource-group "myResourceGroup" '
+                     '--name "mySshPublicKeyName"')
+            raise Exception("Error Expected!")
+        except ResourceNotFoundError as e:
+            assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
+
     # EXAMPLE: /VirtualMachines/post/Reimage a Virtual Machine.
     def test_virtual_machine_reimage(self):
         try:
@@ -29,6 +67,8 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
 
     # EXAMPLE: /VirtualMachineScaleSetVMExtensions/get/List extensions in Vmss instance.
     def test_virtual_machine_scale_set_vm_extension_list(self):
@@ -40,6 +80,8 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
 
     # EXAMPLE: /VirtualMachineScaleSetVMExtensions/get/Get VirtualMachineScaleSet VM extension.
     def test_virtual_machine_scale_set_vm_extension_show(self):
@@ -52,6 +94,8 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
 
     # EXAMPLE: /VirtualMachineScaleSetVMExtensions/put/Create VirtualMachineScaleSet VM extension.
     def test_virtual_machine_scale_set_vm_extension_create(self):
@@ -69,6 +113,8 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
 
     # EXAMPLE: /VirtualMachineScaleSetVMs/post/RetrieveBootDiagnosticsData of a virtual machine.
     def test_virtual_machine_scale(self):
@@ -81,17 +127,8 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
-
-    # EXAMPLE: /VirtualMachineScaleSetVMRunCommands/get/List run commands in Vmss instance.
-    def test_virtual_machine_scale_set_vm_run_command_list(self):
-        try:
-            self.cmd('az vm virtual-machine-scale-set-vm-run-command list '
-                     '--instance-id "0" '
-                     '--resource-group "myResourceGroup" '
-                     '--vm-scale-set-name "myvmScaleSet"')
-            raise Exception("Error Expected!")
-        except ResourceNotFoundError as e:
-            assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
 
     # EXAMPLE: /DiskAccesses/delete/Delete a private endpoint connection under a disk access resource.
     def test_disk_access_delete(self):
@@ -103,6 +140,8 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
 
     # EXAMPLE: /DiskAccesses/get/List all possible private link resources under disk access resource.
     def test_disk_access_show_private_link_resource(self):
@@ -113,6 +152,8 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
 
     # EXAMPLE: /GalleryApplications/get/List gallery Applications in a gallery.
     def test_gallery_application_list(self):
@@ -123,6 +164,8 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
 
     # EXAMPLE: /GalleryApplications/get/Get a gallery Application.
     def test_gallery_application_show(self):
@@ -134,6 +177,8 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
 
     # EXAMPLE: /GalleryApplications/put/Create or update a simple gallery Application.
     def test_gallery_application_create(self):
@@ -151,6 +196,8 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
 
     # EXAMPLE: /GalleryApplications/delete/Delete a gallery Application.
     def test_gallery_application_delete(self):
@@ -162,6 +209,8 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")
 
     # EXAMPLE: /GalleryApplicationVersions/get/List gallery Application Versions in a gallery Application Definition.
     def test_gallery_application_version_list(self):
@@ -173,3 +222,5 @@ class NegativeTest(ScenarioTest):
             raise Exception("Error Expected!")
         except ResourceNotFoundError as e:
             assert e.message.startswith("(500)")
+        except SystemExit as e:
+            assert e.__context__.message.startswith("(500)")

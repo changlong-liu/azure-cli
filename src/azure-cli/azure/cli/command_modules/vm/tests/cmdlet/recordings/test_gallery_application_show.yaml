@@ -1,0 +1,38 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      CommandName:
+      - vm gallery-application show
+      Connection:
+      - keep-alive
+      ParameterSetName:
+      - --name --gallery-name --resource-group
+      User-Agent:
+      - AZURECLI/2.19.1 azsdk-python-azure-mgmt-compute/18.0.0 Python/3.8.1 (Windows-10-10.0.19041-SP0)
+    method: GET
+    uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/galleries/myGalleryName/applications/myGalleryApplicationName?api-version=2020-09-30
+  response:
+    body:
+      string: '{"id":"aa","name":"myGalleryApplicationName","type":"aaaaaaaaaaaaaaaaaaaaaa","location":"aaaaaaaaaaaaaaaaaaaaaaaa","tags":{"key9848":"a"},"properties":{"description":"aaaaaaa","eula":"aaaaaaaaaaaaaaaaaaaaaaaaa","privacyStatementUri":"aaaaaaaaaaaaaaaaaaaaaaaaaaaa","releaseNoteUri":"aaaaaaaaaaaaa","endOfLifeDate":"2021-03-02T03:18:17.138Z","supportedOSType":"Windows"}}'
+    headers:
+      connection:
+      - keep-alive
+      content-length:
+      - '369'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 02 Mar 2021 03:26:20 GMT
+      etag:
+      - W/"171-eG8X4xb/JYTBNvSc5Nw95+SgVxg"
+      x-powered-by:
+      - Express
+    status:
+      code: 200
+      message: OK
+version: 1
