@@ -23,6 +23,12 @@ from ._client_factory import _compute_client_factory
 logger = get_logger(__name__)
 
 
+from .generated.action import *  # noqa: F403
+try:
+    from .manual.action import *  # noqa: F403
+except ImportError:
+    pass
+
 def _resource_not_exists(cli_ctx, resource_type):
     def _handle_resource_not_exists(namespace):
         # TODO: hook up namespace._subscription_id once we support it
