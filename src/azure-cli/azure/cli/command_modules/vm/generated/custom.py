@@ -14,8 +14,10 @@ from azure.cli.core.util import sdk_no_wait
 
 
 def vm_ssh_public_key_list(client,
-                           resource_group_name):
-    return client.list_by_resource_group(resource_group_name=resource_group_name)
+                           resource_group_name=None):
+    if resource_group_name:
+        return client.list_by_resource_group(resource_group_name=resource_group_name)
+    return client.list_by_subscription()
 
 
 def vm_ssh_public_key_show(client,
@@ -40,6 +42,17 @@ def vm_ssh_public_key_create(client,
                          parameters=parameters)
 
 
+def vm_ssh_public_key_update(client,
+                             resource_group_name,
+                             ssh_public_key_name,
+                             tags=None,
+                             public_key=None):
+    return client.update(resource_group_name=resource_group_name,
+                         ssh_public_key_name=ssh_public_key_name,
+                         tags=tags,
+                         public_key=public_key)
+
+
 def vm_ssh_public_key_delete(client,
                              resource_group_name,
                              ssh_public_key_name):
@@ -56,13 +69,13 @@ def vm_ssh_public_key_generate_key_pair(client,
 
 def vm_virtual_machine_reimage(client,
                                resource_group_name,
-                               vm_name,
+                               name,
                                temp_disk=None,
                                no_wait=False):
     return sdk_no_wait(no_wait,
                        client.reimage,
                        resource_group_name=resource_group_name,
-                       vm_name=vm_name,
+                       vm_name=name,
                        temp_disk=temp_disk)
 
 
@@ -145,7 +158,7 @@ def vm_virtual_machine_scale_set_vm_extension_create(client,
     extension_parameters = {}
     extension_parameters['force_update_tag'] = force_update_tag
     extension_parameters['publisher'] = publisher
-    extension_parameters = type_properties_type
+    extension_parameters['type_properties_type'] = type_properties_type
     extension_parameters['type_handler_version'] = type_handler_version
     extension_parameters['auto_upgrade_minor_version'] = auto_upgrade_minor_version
     extension_parameters['enable_automatic_upgrade'] = enable_automatic_upgrade

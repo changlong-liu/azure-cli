@@ -14,20 +14,19 @@ from knack.help_files import helps
 
 helps['vm ssh-public-key'] = """
     type: group
-    short-summary: Manage ssh public key with vm. Command group swagger name=SshPublicKeys
+    short-summary: Manage ssh public key with vm
 """
 
 helps['vm ssh-public-key list'] = """
     type: command
     short-summary: "Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the \
-response to get the next page of SSH public keys. Command group swagger name=SshPublicKeys, Command swagger \
-name=ListByResourceGroup."
+response to get the next page of SSH public keys. And Lists all of the SSH public keys in the subscription. Use the \
+nextLink property in the response to get the next page of SSH public keys."
 """
 
 helps['vm ssh-public-key show'] = """
     type: command
-    short-summary: "Retrieves information about an SSH public key. Command group swagger name=SshPublicKeys, Command \
-swagger name=Get."
+    short-summary: "Retrieves information about an SSH public key."
     examples:
       - name: Get an ssh public key.
         text: |-
@@ -36,8 +35,7 @@ swagger name=Get."
 
 helps['vm ssh-public-key create'] = """
     type: command
-    short-summary: "Creates a new SSH public key resource. Command group swagger name=SshPublicKeys, Command swagger \
-name=Create."
+    short-summary: "Creates a new SSH public key resource."
     examples:
       - name: Create a new SSH public key resource.
         text: |-
@@ -45,16 +43,21 @@ name=Create."
 "myResourceGroup" --name "mySshPublicKeyName"
 """
 
+helps['vm ssh-public-key update'] = """
+    type: command
+    short-summary: "Updates a new SSH public key resource."
+"""
+
 helps['vm ssh-public-key delete'] = """
     type: command
-    short-summary: "Delete an SSH public key. Command group swagger name=SshPublicKeys, Command swagger name=Delete."
+    short-summary: "Delete an SSH public key."
 """
 
 helps['vm ssh-public-key generate-key-pair'] = """
     type: command
     short-summary: "Generates and returns a public/private key pair and populates the SSH public key resource with the \
 public key. The length of the key will be 3072 bits. This operation can only be performed once per SSH public key \
-resource. Command group swagger name=SshPublicKeys, Command swagger name=GenerateKeyPair."
+resource."
     examples:
       - name: Generate an SSH key pair.
         text: |-
@@ -63,13 +66,12 @@ resource. Command group swagger name=SshPublicKeys, Command swagger name=Generat
 
 helps['vm virtual-machine'] = """
     type: group
-    short-summary: Manage virtual machine with vm. Command group swagger name=VirtualMachines
+    short-summary: Manage virtual machine with vm
 """
 
 helps['vm virtual-machine reimage'] = """
     type: command
-    short-summary: "Reimages the virtual machine which has an ephemeral OS disk back to its initial state. Command \
-group swagger name=VirtualMachines, Command swagger name=Reimage."
+    short-summary: "Reimages the virtual machine which has an ephemeral OS disk back to its initial state."
     examples:
       - name: Reimage a Virtual Machine.
         text: |-
@@ -87,27 +89,25 @@ helps['vm virtual-machine wait'] = """
 
 helps['vm virtual-machine-scale-set'] = """
     type: group
-    short-summary: Manage virtual machine scale set with vm. Command group swagger name=VirtualMachineScaleSets
+    short-summary: Manage virtual machine scale set with vm
 """
 
 helps['vm virtual-machine-scale-set force-recovery-service-fabric-platform-update-domain-walk'] = """
     type: command
     short-summary: "Manual platform update domain walk to update virtual machines in a service fabric virtual machine \
-scale set. Command group swagger name=VirtualMachineScaleSets, Command swagger name=ForceRecoveryServiceFabricPlatformU\
-pdateDomainWalk."
+scale set."
 """
 
 helps['vm virtual-machine-scale-set redeploy'] = """
     type: command
     short-summary: "Shuts down all the virtual machines in the virtual machine scale set, moves them to a new node, \
-and powers them back on. Command group swagger name=VirtualMachineScaleSets, Command swagger name=Redeploy."
+and powers them back on."
 """
 
 helps['vm virtual-machine-scale-set reimage-all'] = """
     type: command
     short-summary: "Reimages all the disks ( including data disks ) in the virtual machines in a VM scale set. This \
-operation is only supported for managed disks. Command group swagger name=VirtualMachineScaleSets, Command swagger \
-name=ReimageAll."
+operation is only supported for managed disks."
 """
 
 helps['vm virtual-machine-scale-set wait'] = """
@@ -121,14 +121,12 @@ helps['vm virtual-machine-scale-set wait'] = """
 
 helps['vm virtual-machine-scale-set-vm-extension'] = """
     type: group
-    short-summary: Manage virtual machine scale set vm extension with vm. Command group swagger \
-name=VirtualMachineScaleSetVMExtensions
+    short-summary: Manage virtual machine scale set vm extension with vm
 """
 
 helps['vm virtual-machine-scale-set-vm-extension list'] = """
     type: command
-    short-summary: "The operation to get all extensions of an instance in Virtual Machine Scaleset. Command group \
-swagger name=VirtualMachineScaleSetVMExtensions, Command swagger name=List."
+    short-summary: "The operation to get all extensions of an instance in Virtual Machine Scaleset."
     examples:
       - name: List extensions in Vmss instance.
         text: |-
@@ -138,8 +136,7 @@ swagger name=VirtualMachineScaleSetVMExtensions, Command swagger name=List."
 
 helps['vm virtual-machine-scale-set-vm-extension show'] = """
     type: command
-    short-summary: "The operation to get the VMSS VM extension. Command group swagger name=VirtualMachineScaleSetVMExte\
-nsions, Command swagger name=Get."
+    short-summary: "The operation to get the VMSS VM extension."
     examples:
       - name: Get VirtualMachineScaleSet VM extension.
         text: |-
@@ -149,11 +146,10 @@ nsions, Command swagger name=Get."
 
 helps['vm virtual-machine-scale-set-vm-extension create'] = """
     type: command
-    short-summary: "The operation to Create the VMSS VM extension. Command group swagger \
-name=VirtualMachineScaleSetVMExtensions, Command swagger name=CreateOrUpdate#Create."
+    short-summary: "The operation to Create the VMSS VM extension."
     parameters:
       - name: --substatuses
-        short-summary: "The resource status information. Swagger name=substatuses"
+        short-summary: "The resource status information."
         long-summary: |
             Usage: --substatuses code=XX level=XX display-status=XX message=XX time=XX
 
@@ -165,7 +161,7 @@ name=VirtualMachineScaleSetVMExtensions, Command swagger name=CreateOrUpdate#Cre
 
             Multiple actions can be specified by using more than one --substatuses argument.
       - name: --statuses
-        short-summary: "The resource status information. Swagger name=statuses"
+        short-summary: "The resource status information."
         long-summary: |
             Usage: --statuses code=XX level=XX display-status=XX message=XX time=XX
 
@@ -199,26 +195,25 @@ successfully created.
 
 helps['vm virtual-machine-scale-set-v-ms'] = """
     type: group
-    short-summary: Manage virtual machine scale set v ms with vm. Command group swagger name=VirtualMachineScaleSetVMs
+    short-summary: Manage virtual machine scale set v ms with vm
 """
 
 helps['vm virtual-machine-scale-set-v-ms redeploy'] = """
     type: command
     short-summary: "Shuts down the virtual machine in the virtual machine scale set, moves it to a new node, and \
-powers it back on. Command group swagger name=VirtualMachineScaleSetVMs, Command swagger name=Redeploy."
+powers it back on."
 """
 
 helps['vm virtual-machine-scale-set-v-ms reimage-all'] = """
     type: command
     short-summary: "Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This \
-operation is only supported for managed disks. Command group swagger name=VirtualMachineScaleSetVMs, Command swagger \
-name=ReimageAll."
+operation is only supported for managed disks."
 """
 
 helps['vm virtual-machine-scale-set-v-ms retrieve-boot-diagnostic-data'] = """
     type: command
     short-summary: "The operation to retrieve SAS URIs of boot diagnostic logs for a virtual machine in a VM scale \
-set. Command group swagger name=VirtualMachineScaleSetVMs, Command swagger name=RetrieveBootDiagnosticsData."
+set."
     examples:
       - name: RetrieveBootDiagnosticsData of a virtual machine.
         text: |-
@@ -239,13 +234,12 @@ created.
 
 helps['vm disk-access'] = """
     type: group
-    short-summary: Manage disk access with vm. Command group swagger name=DiskAccesses
+    short-summary: Manage disk access with vm
 """
 
 helps['vm disk-access delete'] = """
     type: command
-    short-summary: "Deletes a private endpoint connection under a disk access resource. Command group swagger \
-name=DiskAccesses, Command swagger name=DeleteAPrivateEndpointConnection."
+    short-summary: "Deletes a private endpoint connection under a disk access resource."
     examples:
       - name: Delete a private endpoint connection under a disk access resource.
         text: |-
@@ -255,8 +249,7 @@ name=DiskAccesses, Command swagger name=DeleteAPrivateEndpointConnection."
 
 helps['vm disk-access show-private-link-resource'] = """
     type: command
-    short-summary: "Gets the private link resources possible under disk access resource Command group swagger \
-name=DiskAccesses, Command swagger name=GetPrivateLinkResources."
+    short-summary: "Gets the private link resources possible under disk access resource."
     examples:
       - name: List all possible private link resources under disk access resource.
         text: |-
@@ -275,13 +268,12 @@ helps['vm disk-access wait'] = """
 
 helps['vm gallery-application'] = """
     type: group
-    short-summary: Manage gallery application with vm. Command group swagger name=GalleryApplications
+    short-summary: Manage gallery application with vm
 """
 
 helps['vm gallery-application list'] = """
     type: command
-    short-summary: "List gallery Application Definitions in a gallery. Command group swagger name=GalleryApplications, \
-Command swagger name=ListByGallery."
+    short-summary: "List gallery Application Definitions in a gallery."
     examples:
       - name: List gallery Applications in a gallery.
         text: |-
@@ -290,8 +282,7 @@ Command swagger name=ListByGallery."
 
 helps['vm gallery-application show'] = """
     type: command
-    short-summary: "Retrieves information about a gallery Application Definition. Command group swagger \
-name=GalleryApplications, Command swagger name=Get."
+    short-summary: "Retrieves information about a gallery Application Definition."
     examples:
       - name: Get a gallery Application.
         text: |-
@@ -301,8 +292,7 @@ name=GalleryApplications, Command swagger name=Get."
 
 helps['vm gallery-application create'] = """
     type: command
-    short-summary: "Create a gallery Application Definition. Command group swagger name=GalleryApplications, Command \
-swagger name=CreateOrUpdate#Create."
+    short-summary: "Create a gallery Application Definition."
     examples:
       - name: Create or update a simple gallery Application.
         text: |-
@@ -314,8 +304,7 @@ description." --eula "This is the gallery application EULA." --privacy-statement
 
 helps['vm gallery-application delete'] = """
     type: command
-    short-summary: "Delete a gallery Application. Command group swagger name=GalleryApplications, Command swagger \
-name=Delete."
+    short-summary: "Delete a gallery Application."
     examples:
       - name: Delete a gallery Application.
         text: |-
@@ -339,13 +328,12 @@ helps['vm gallery-application wait'] = """
 
 helps['vm gallery-application-version'] = """
     type: group
-    short-summary: Manage gallery application version with vm. Command group swagger name=GalleryApplicationVersions
+    short-summary: Manage gallery application version with vm
 """
 
 helps['vm gallery-application-version list'] = """
     type: command
-    short-summary: "List gallery Application Versions in a gallery Application Definition. Command group swagger \
-name=GalleryApplicationVersions, Command swagger name=ListByGalleryApplication."
+    short-summary: "List gallery Application Versions in a gallery Application Definition."
     examples:
       - name: List gallery Application Versions in a gallery Application Definition.
         text: |-

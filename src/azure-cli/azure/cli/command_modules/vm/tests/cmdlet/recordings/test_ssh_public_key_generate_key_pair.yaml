@@ -20,18 +20,18 @@ interactions:
     uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/sshPublicKeys/mySshPublicKeyName/generateKeyPair?api-version=2020-06-01
   response:
     body:
-      string: '{"privateKey":"aaaaaa","publicKey":"aaa","id":"aaaaaaaaa"}'
+      string: '{"privateKey":"aaaaaaaaaaaaaaaaaaaaaaaaaa","publicKey":"aaaaaaaaaaaaaaaaaaaa","id":"aaaaaaaaaaaaaaaaaa"}'
     headers:
       connection:
       - keep-alive
       content-length:
-      - '58'
+      - '104'
       content-type:
       - application/json; charset=utf-8
       date:
-      - Tue, 02 Mar 2021 03:26:29 GMT
+      - Thu, 04 Mar 2021 05:32:28 GMT
       etag:
-      - W/"3a-eXDV4GwsuU0WogBylINQXLK38lI"
+      - W/"68-us5u5x8M2fWiRN60hPK1vSwHqKg"
       x-powered-by:
       - Express
     status:

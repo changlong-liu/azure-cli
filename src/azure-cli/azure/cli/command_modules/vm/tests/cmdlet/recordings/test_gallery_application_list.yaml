@@ -18,18 +18,18 @@ interactions:
     uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/galleries/myGalleryName/applications?api-version=2020-09-30
   response:
     body:
-      string: '{"value":[{"id":"aa","name":"applications","type":"aaaaaaaaaaaaaaaaaaaaaa","location":"aaaaaaaaaaaaaaaaaaaaaaaa","tags":{"key9848":"a"},"properties":{"description":"aaaaaaa","eula":"aaaaaaaaaaaaaaaaaaaaaaaaa","privacyStatementUri":"aaaaaaaaaaaaaaaaaaaaaaaaaaaa","releaseNoteUri":"aaaaaaaaaaaaa","endOfLifeDate":"2021-03-02T03:18:17.138Z","supportedOSType":"Windows"}}]}'
+      string: '{"value":[{"id":"aaaaaaaaaaaaaaaaaaaaaaaaa","name":"applications","type":"aaaaaaaaaaaaaaaaaa","location":"aaaaaaaaaaaaaaaaaaa","tags":{"key1576":"a"},"properties":{"description":"aaaaaaaaaaaaaaaaaaaa","eula":"aaaaaa","privacyStatementUri":"aaaaaaaaaaaaaaaaaaaaaa","releaseNoteUri":"aaaaaaaaaaaaaaaaaaaaaaaaaaa","endOfLifeDate":"2021-03-04T05:32:15.878Z","supportedOSType":"Windows"}}]}'
     headers:
       connection:
       - keep-alive
       content-length:
-      - '369'
+      - '385'
       content-type:
       - application/json; charset=utf-8
       date:
-      - Tue, 02 Mar 2021 03:26:17 GMT
+      - Thu, 04 Mar 2021 05:32:15 GMT
       etag:
-      - W/"171-p8RA0xmA+GPfd1kKd3Rw/du7Oj8"
+      - W/"181-ek9mEk96xV4suSV/diOyav5E5W8"
       x-powered-by:
       - Express
     status:

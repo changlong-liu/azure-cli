@@ -22,18 +22,18 @@ interactions:
     uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/sshPublicKeys/mySshPublicKeyName?api-version=2020-06-01
   response:
     body:
-      string: '{"id":"aaaaaaaaaaaaaaaaaaa","name":"mySshPublicKeyName","type":"aaaaaaaaaaaaaaaaaaaaaaa","location":"aaaaaaaaaaaa","tags":{"key9418":"aa"},"properties":{"publicKey":"aaaaaaaaaaaaaaaaaaaaaa"}}'
+      string: '{"id":"aaa","name":"mySshPublicKeyName","type":"aaaaaaaaaaaaaa","location":"aaaaaaaaaaaaa","tags":{"key2992":"aaaaaaaaaaaaaa"},"properties":{"publicKey":"aaaaaaaaaaaaaaaaaaaaaaaaaaaa"}}'
     headers:
       connection:
       - keep-alive
       content-length:
-      - '191'
+      - '185'
       content-type:
       - application/json; charset=utf-8
       date:
-      - Tue, 02 Mar 2021 03:26:26 GMT
+      - Thu, 04 Mar 2021 05:32:24 GMT
       etag:
-      - W/"bf-G035yXned0Pnl0YwzZK5eRVNySw"
+      - W/"b9-2fM8sCDhIcrfcGEhZAyADrlpIvo"
       x-powered-by:
       - Express
     status:
@@ -58,18 +58,18 @@ interactions:
     uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/sshPublicKeys/mySshPublicKeyName?api-version=2020-06-01
   response:
     body:
-      string: '{"id":"aaaaaaaaaaaaaaaaaaa","name":"mySshPublicKeyName","type":"aaaaaaaaaaaaaaaaaaaaaaa","location":"aaaaaaaaaaaa","tags":{"key9418":"aa"},"properties":{"publicKey":"aaaaaaaaaaaaaaaaaaaaaa"}}'
+      string: '{"id":"aaa","name":"mySshPublicKeyName","type":"aaaaaaaaaaaaaa","location":"aaaaaaaaaaaaa","tags":{"key2992":"aaaaaaaaaaaaaa"},"properties":{"publicKey":"aaaaaaaaaaaaaaaaaaaaaaaaaaaa"}}'
     headers:
       connection:
       - keep-alive
       content-length:
-      - '191'
+      - '185'
       content-type:
       - application/json; charset=utf-8
       date:
-      - Tue, 02 Mar 2021 03:26:27 GMT
+      - Thu, 04 Mar 2021 05:32:25 GMT
       etag:
-      - W/"bf-G035yXned0Pnl0YwzZK5eRVNySw"
+      - W/"b9-2fM8sCDhIcrfcGEhZAyADrlpIvo"
       x-powered-by:
       - Express
     status:

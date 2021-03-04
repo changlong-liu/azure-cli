@@ -18,18 +18,18 @@ interactions:
     uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myvmScaleSet/virtualMachines/0/extensions/myVMExtension?api-version=2020-06-01
   response:
     body:
-      string: '{"id":"aaaaaaaaaaaaaaaaa","name":"myVMExtension","type":"aaaaaaaaaaaaaaaa","properties":{"forceUpdateTag":"aaaaaaaaaaaaaaaaaaaaa","publisher":"aaaaaaaaaa","type":"aaaaaaaaa","typeHandlerVersion":"aaaaaaaaaaaaaaaaaaaa","autoUpgradeMinorVersion":true,"enableAutomaticUpgrade":true,"settings":{},"protectedSettings":{},"provisioningState":"Succeeded","instanceView":{"name":"myVMExtension","type":"aaa","typeHandlerVersion":"aaaa","substatuses":[{"code":"aaaa","level":"Info","displayStatus":"aaaaaaaaa","message":"aaaa","time":"2021-03-02T03:18:29.165Z"}],"statuses":[{"code":"aaaa","level":"Info","displayStatus":"aaaaaaaaa","message":"aaaa","time":"2021-03-02T03:18:29.165Z"}]}}}'
+      string: '{"id":"aaaaaaaaaaaaaaaaaaaaaa","name":"myVMExtension","type":"aaaaaaaaaaaaaa","properties":{"forceUpdateTag":"aaaaaaaaaaaaaaaaaaaaaaaaa","publisher":"aaa","type":"aaaaaaaaaaaaaaaaa","typeHandlerVersion":"aaaaaaaaaaaaaaaaaaaaaaaaaa","autoUpgradeMinorVersion":true,"enableAutomaticUpgrade":true,"settings":{},"protectedSettings":{},"provisioningState":"Succeeded","instanceView":{"name":"myVMExtension","type":"aaaaaaaaaaaaaaaaaaaaaaaaaaaa","typeHandlerVersion":"aaaaaaaaaaaaaaaaaaaaaaaaa","substatuses":[{"code":"aaaaaaaaaaaaaaaaaa","level":"Info","displayStatus":"aaaaa","message":"aaaaaaaaaaaaaaaaaaaaaaaaaa","time":"2021-03-04T05:32:37.878Z"}],"statuses":[{"code":"aaaaaaaaaaaaaaaaaa","level":"Info","displayStatus":"aaaaa","message":"aaaaaaaaaaaaaaaaaaaaaaaaaa","time":"2021-03-04T05:32:37.878Z"}]}}}'
     headers:
       connection:
       - keep-alive
       content-length:
-      - '679'
+      - '803'
       content-type:
       - application/json; charset=utf-8
       date:
-      - Tue, 02 Mar 2021 03:26:41 GMT
+      - Thu, 04 Mar 2021 05:32:40 GMT
       etag:
-      - W/"2a7-2GKpt6X6y8nPnfzvU//f7QdHWt0"
+      - W/"323-bhTw+Xj5iS6ZXYk6mni/BgoI7Wk"
       x-powered-by:
       - Express
     status:

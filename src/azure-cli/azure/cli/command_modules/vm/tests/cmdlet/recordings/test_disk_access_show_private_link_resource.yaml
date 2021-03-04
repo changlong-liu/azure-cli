@@ -18,18 +18,18 @@ interactions:
     uri: https://localhost:8443/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/diskAccesses/myDiskAccess/privateLinkResources?api-version=2020-06-30
   response:
     body:
-      string: '{"value":[{"properties":{"groupId":"aaaaaaaaaaaaaaaaaaaaaaaaaaaa","requiredMembers":["aaaaaaaa"],"requiredZoneNames":["aaaaaaa"]},"id":"aaaaaaaaaaaaaaaaaaaaaaaaaa","name":"privateLinkResources","type":"aaaaaaaaaaaaaaaaaaaa"}]}'
+      string: '{"value":[{"properties":{"groupId":"aaaaaaaaaaaa","requiredMembers":["aaaaaaa"],"requiredZoneNames":["aaaaaaaaaaaaaaaaaaaaaaaaaaaa"]},"id":"aaaaaaaaaaaaaaaa","name":"privateLinkResources","type":"aaaaaa"}]}'
     headers:
       connection:
       - keep-alive
       content-length:
-      - '226'
+      - '206'
       content-type:
       - application/json; charset=utf-8
       date:
-      - Tue, 02 Mar 2021 03:26:11 GMT
+      - Thu, 04 Mar 2021 05:32:08 GMT
       etag:
-      - W/"e2-jKlz483QZ5tf4W4ekzEQenb4Jb8"
+      - W/"ce-v98VfifH2Hcbco+3LMJNS31UVZ4"
       x-powered-by:
       - Express
     status:

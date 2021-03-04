@@ -42,8 +42,10 @@
 |CLI Command|Operation Swagger name|Parameters|Examples|
 |---------|------------|--------|-----------|
 |[az vm ssh-public-key list](#SshPublicKeysListByResourceGroup)|ListByResourceGroup|[Parameters](#ParametersSshPublicKeysListByResourceGroup)|Not Found|
+|[az vm ssh-public-key list](#SshPublicKeysListBySubscription)|ListBySubscription|[Parameters](#ParametersSshPublicKeysListBySubscription)|Not Found|
 |[az vm ssh-public-key show](#SshPublicKeysGet)|Get|[Parameters](#ParametersSshPublicKeysGet)|[Example](#ExamplesSshPublicKeysGet)|
 |[az vm ssh-public-key create](#SshPublicKeysCreate)|Create|[Parameters](#ParametersSshPublicKeysCreate)|[Example](#ExamplesSshPublicKeysCreate)|
+|[az vm ssh-public-key update](#SshPublicKeysUpdate)|Update|[Parameters](#ParametersSshPublicKeysUpdate)|Not Found|
 |[az vm ssh-public-key delete](#SshPublicKeysDelete)|Delete|[Parameters](#ParametersSshPublicKeysDelete)|Not Found|
 |[az vm ssh-public-key generate-key-pair](#SshPublicKeysGenerateKeyPair)|GenerateKeyPair|[Parameters](#ParametersSshPublicKeysGenerateKeyPair)|[Example](#ExamplesSshPublicKeysGenerateKeyPair)|
 
@@ -191,6 +193,11 @@ az vm gallery-application-version list --gallery-application-name "myGalleryAppl
 |------|----|-----------|----------|------------|
 |**--resource-group-name**|string|The name of the resource group.|resource_group_name|resourceGroupName|
 
+#### <a name="SshPublicKeysListBySubscription">Command `az vm ssh-public-key list`</a>
+
+##### <a name="ParametersSshPublicKeysListBySubscription">Parameters</a> 
+|Option|Type|Description|Path (SDK)|Swagger name|
+|------|----|-----------|----------|------------|
 #### <a name="SshPublicKeysGet">Command `az vm ssh-public-key show`</a>
 
 ##### <a name="ExamplesSshPublicKeysGet">Example</a>
@@ -216,6 +223,16 @@ az vm ssh-public-key create --location "westus" --public-key "{ssh-rsa public ke
 |**--resource-group-name**|string|The name of the resource group.|resource_group_name|resourceGroupName|
 |**--ssh-public-key-name**|string|The name of the SSH public key.|ssh_public_key_name|sshPublicKeyName|
 |**--location**|string|Resource location|location|location|
+|**--tags**|dictionary|Resource tags|tags|tags|
+|**--public-key**|string|SSH public key used to authenticate to a virtual machine through ssh. If this property is not initially provided when the resource is created, the publicKey property will be populated when generateKeyPair is called. If the public key is provided upon resource creation, the provided public key needs to be at least 2048-bit and in ssh-rsa format.|public_key|publicKey|
+
+#### <a name="SshPublicKeysUpdate">Command `az vm ssh-public-key update`</a>
+
+##### <a name="ParametersSshPublicKeysUpdate">Parameters</a> 
+|Option|Type|Description|Path (SDK)|Swagger name|
+|------|----|-----------|----------|------------|
+|**--resource-group-name**|string|The name of the resource group.|resource_group_name|resourceGroupName|
+|**--ssh-public-key-name**|string|The name of the SSH public key.|ssh_public_key_name|sshPublicKeyName|
 |**--tags**|dictionary|Resource tags|tags|tags|
 |**--public-key**|string|SSH public key used to authenticate to a virtual machine through ssh. If this property is not initially provided when the resource is created, the publicKey property will be populated when generateKeyPair is called. If the public key is provided upon resource creation, the provided public key needs to be at least 2048-bit and in ssh-rsa format.|public_key|publicKey|
 
@@ -250,7 +267,7 @@ az vm virtual-machine reimage --temp-disk true --resource-group "myResourceGroup
 |Option|Type|Description|Path (SDK)|Swagger name|
 |------|----|-----------|----------|------------|
 |**--resource-group-name**|string|The name of the resource group.|resource_group_name|resourceGroupName|
-|**--vm-name**|string|The name of the virtual machine.|vm_name|vmName|
+|**--name**|string|The name of the virtual machine.|name|vmName|
 |**--temp-disk**|boolean|Specifies whether to reimage temp disk. Default value: false. Note: This temp disk reimage parameter is only supported for VM/VMSS with Ephemeral OS disk.|temp_disk|tempDisk|
 
 ### group `az vm virtual-machine-scale-set`
